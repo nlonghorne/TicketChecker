@@ -27,8 +27,8 @@ jobs:
       - name: Run ticket checker
         env:
           REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
-          EMAIL_USER: ${{ secrets.EMAIL_USER }}
-          EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          EMAIL_USER: ${{ secrets.EMAIL_ADDRESS }}
+          EMAIL_PASS: ${{ secrets.EMAIL_PASSWORD }}
           API_KEY: ${{ secrets.API_KEY }}
         run: |
           python ticket_checker.py
