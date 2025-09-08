@@ -83,12 +83,12 @@ def call_resale_api():
     ticket_data = resp.json()
 
     # Define the target dates
-    target_dates = {"2025-12-18", "2025-12-17"}
+    target_dates = {"2025-12-17"}
 
     # Filter tickets by date
     filtered = []
     for product in ticket_data.get("results", []):
-        if product.get("available_tickets_count") > 0:
+        if product.get("available_tickets_count") == 2:
             product_fields = product.get("fields")
             date = product_fields.get("date")
             if date:
