@@ -62,7 +62,7 @@ def call_resale_api():
     url = "https://marketplace.ticketek.com.au/search/api/products"
 
     params = {
-        "content_id": "TESSCG0126",
+        "content_id": "TESADO0126",
         "sort": "date asc"
     }
     headers = {
@@ -83,7 +83,7 @@ def call_resale_api():
     ticket_data = resp.json()
 
     # Define the target dates
-    target_dates = {"2026-01-04", "2026-01-05"}
+    target_dates = {"2025-12-18", "2025-12-17"}
 
     # Filter tickets by date
     filtered = []
@@ -102,7 +102,7 @@ def call_resale_api():
         for ticket in filtered:
             email_text += ticket.get("fields").get("when")
             email_text += "\n"
-        email_text += "\nCheck here now:\nhttps://marketplace.ticketek.com.au/purchase/searchlist/products?keyword=ashes%20sydney&content_id=TESSCG0126"
+        email_text += "\nCheck here now:\nhttps://marketplace.ticketek.com.au/purchase/searchlist/products?keyword=ashes%20adelaide&content_id=TESADO0126"
         email_text += "\n\nLove from,\nYourself <3"
         send_email("Ashes Tickets Found!!", email_text)
         print("Tickets Found!")
